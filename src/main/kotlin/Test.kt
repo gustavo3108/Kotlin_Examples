@@ -1,6 +1,6 @@
 package org.kotlinlang.play
 
-class Test {
+
     fun printMessage(message:String): Unit{
         println(message)
     }
@@ -11,7 +11,8 @@ class Test {
         return x + y;
     }
     fun multiply (x: Int, y: Int) = x * y
-}
+
 fun main(){
-    print("Hello")
+    printMessage("Hello")
+    printMessageWithPrefix("Hello")
 }
