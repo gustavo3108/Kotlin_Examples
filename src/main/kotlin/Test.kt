@@ -15,4 +15,7 @@ package org.kotlinlang.play
 fun main(){
     printMessage("Hello")
     printMessageWithPrefix("Hello")
+    printMessageWithPrefix(prefix="Log",message="Hello")
+    println(sum(2,5))
+    println(multiply(2,5))
 }
