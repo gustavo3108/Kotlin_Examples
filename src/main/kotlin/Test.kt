@@ -34,9 +34,9 @@ var inferredNonNull = "The compiler assumes non-null"//Var inferida não pode se
         }
     }
 
-    println(describeString(null))
-    println(describeString(""))
-    println(describeString("Gustavo"))
+//    println(describeString(null))
+//    println(describeString(""))
+//    println(describeString("Gustavo"))
 //    printMessage("Hello")
 //    printMessageWithPrefix("Hello")
 //    printMessageWithPrefix(prefix="Log",message="Hello")
@@ -51,11 +51,39 @@ var inferredNonNull = "The compiler assumes non-null"//Var inferida não pode se
 //    println(b)
 //    println(c)
 
-val customer= Customer()
-val contact = Contact(1, "gustavo@gmail.com")
-    println("id: " + contact.id + " email: "+ contact.email)
-    contact.email= "gugu@hotmail.com"
-    println("id: " + contact.id + " email: "+ contact.email)
+//val customer= Customer()
+//val contact = Contact(1, "gustavo@gmail.com")
+//    println("id: " + contact.id + " email: "+ contact.email)
+//    contact.email= "gugu@hotmail.com"
+//    println("id: " + contact.id + " email: "+ contact.email)
+    val stack = MutableStack(0.62, 3.14, 2.7)
+    stack.push(9.87)
+    println(stack)
+
+    println("peek(): ${stack.peek()}")
+    println(stack)
+
+    for (i in 1..stack.size()) {
+        println("pop(): ${stack.pop()}")
+        println(stack)
+    }
+
 }
 class Customer
 class Contact (val id: Int, var email: String)
+class MutableStack<E>(vararg items: E) {              // 1 Declaração de genéricos que recebe um vararg(array)
+
+    private val elements = items.toMutableList()
+
+    fun push(element: E) = elements.add(element)        // 2
+
+    fun peek(): E = elements.last()                     // 3
+
+    fun pop(): E = elements.removeAt(elements.size - 1)
+
+    fun isEmpty() = elements.isEmpty()
+
+    fun size() = elements.size
+
+    override fun toString() = "MutableStack(${elements.joinToString()})"
+}
