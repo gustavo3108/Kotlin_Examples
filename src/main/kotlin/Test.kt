@@ -25,6 +25,18 @@ var inferredNonNull = "The compiler assumes non-null"//Var inferida não pode se
     }
     println( "exemplo 1: " + strLength(neverNull))
     println( "exemplo 2: " + strLength(nullable))
+
+    fun describeString(maybeString: String?): String{
+        if (maybeString !=null && maybeString.length>0){
+            return "String of length ${maybeString.length}"
+        }else{
+            return "Empty ou null string"
+        }
+    }
+
+    println(describeString(null))
+    println(describeString(""))
+    println(describeString("Gustavo"))
 //    printMessage("Hello")
 //    printMessageWithPrefix("Hello")
 //    printMessageWithPrefix(prefix="Log",message="Hello")
