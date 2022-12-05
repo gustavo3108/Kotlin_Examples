@@ -18,4 +18,13 @@ fun main(){
     printMessageWithPrefix(prefix="Log",message="Hello")
     println(sum(2,5))
     println(multiply(2,5))
+    var a ="Initial"
+    println(a)
+    a="Final"
+    println(a)
+    val b: Int=1 // val é imutável, não pode se atribuir outro valor
+    val c=3
+    println(b)
+
+    println(c)
 }
