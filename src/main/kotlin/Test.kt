@@ -50,4 +50,12 @@ var inferredNonNull = "The compiler assumes non-null"//Var inferida não pode se
 //    val c=3
 //    println(b)
 //    println(c)
-    }
+
+val customer= Customer()
+val contact = Contact(1, "gustavo@gmail.com")
+    println("id: " + contact.id + " email: "+ contact.email)
+    contact.email= "gugu@hotmail.com"
+    println("id: " + contact.id + " email: "+ contact.email)
+}
+class Customer
+class Contact (val id: Int, var email: String)
